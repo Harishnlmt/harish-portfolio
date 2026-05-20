@@ -6,7 +6,7 @@ import { Briefcase } from 'lucide-react';
 
 const experiences = [
     {
-        company: 'Likemind Technologies Pvt Ltd',
+        company: 'Nilgiris Likemind Technologies Pvt Ltd',
         role: 'Generative AI Developer (Full Stack)',
         period: '2023 - Present',
         highlights: [
