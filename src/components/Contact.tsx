@@ -76,7 +76,7 @@ export default function Contact() {
 
                         <div className="space-y-6">
                             {[
-                                { icon: Mail, label: 'Email', value: 'harish@example.com', color: 'text-neon-purple' },
+                                { icon: Mail, label: 'Email', value: 'harishcp2710@gmail.com', color: 'text-neon-purple' },
                                 { icon: LinkedinIcon, label: 'LinkedIn', value: 'linkedin.com/in/harishcp', color: 'text-neon-blue' },
                                 { icon: GithubIcon, label: 'GitHub', value: 'github.com/harishcp', color: 'text-neon-pink' },
                             ].map((link, idx) => (
