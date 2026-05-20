@@ -1,341 +1,367 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  ArrowRight,
   Sparkles,
-  ChevronDown
+  ArrowRight,
+  ChevronDown,
+  Brain,
+  Code2,
+  Cpu,
+  Database,
+  Zap
 } from 'lucide-react';
-import Image from 'next/image';
 
-const techStack = [
-  "React",
-  "FastAPI",
-  "OpenAI",
-  "RAG",
-  "Python",
-  "LangChain",
+const bootMessages = [
+  "Initializing AI Core...",
+  "Loading FastAPI services...",
+  "Connecting Vector Database...",
+  "Starting LLM Engine...",
+  "RAG System Online...",
+  "System Ready ✓"
 ];
 
-const terminalLines = [
-  "✓ Initializing AI Systems",
-  "✓ Loading FastAPI",
-  "✓ Connecting LLMs",
-  "✓ Starting RAG Engine",
-  "✓ Ready"
+const cards = [
+  {
+    title:"AI Systems",
+    icon:<Brain size={20}/>,
+    desc:"RAG • LLM • Agents"
+  },
+  {
+    title:"Frontend",
+    icon:<Code2 size={20}/>,
+    desc:"React • NextJS"
+  },
+  {
+    title:"Backend",
+    icon:<Cpu size={20}/>,
+    desc:"FastAPI • APIs"
+  },
+  {
+    title:"Database",
+    icon:<Database size={20}/>,
+    desc:"PostgreSQL"
+  }
 ];
 
-export default function Hero() {
+export default function Hero(){
 
-  const [lineIndex, setLineIndex] = useState(0);
+const [visible,setVisible]=useState(1);
 
-  useEffect(() => {
-    if (lineIndex < terminalLines.length - 1) {
-      const timer = setTimeout(() => {
-        setLineIndex(prev => prev + 1);
-      }, 900);
+useEffect(()=>{
 
-      return () => clearTimeout(timer);
-    }
-  }, [lineIndex]);
+if(visible<bootMessages.length){
 
-  return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+const timer=setTimeout(()=>{
+setVisible(prev=>prev+1)
+},700)
 
-      {/* Animated Background */}
+return ()=>clearTimeout(timer)
 
-      <div className="absolute inset-0 -z-50">
+}
 
-        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-purple-500/20 blur-[180px] rounded-full animate-pulse"/>
+},[visible])
 
-        <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-cyan-500/20 blur-[180px] rounded-full animate-pulse"/>
 
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:35px_35px]" />
+return(
 
-      </div>
+<section className="relative min-h-screen overflow-hidden bg-black text-white">
 
+{/* background */}
 
-      <div className="max-w-7xl mx-auto px-6 w-full">
+<div className="absolute inset-0 overflow-hidden">
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+<div className="absolute top-[10%] left-[10%] w-[700px] h-[700px] rounded-full bg-purple-500/20 blur-[150px] animate-pulse"/>
 
-          {/* LEFT */}
+<div className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] rounded-full bg-cyan-500/20 blur-[150px] animate-pulse"/>
 
-          <div>
+<div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px]"/>
 
-            <motion.div
-              initial={{opacity:0}}
-              animate={{opacity:1}}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl mb-8"
-            >
-              <Sparkles className="w-4 h-4 text-purple-400"/>
+</div>
 
-              <span className="text-xs uppercase tracking-[4px] text-gray-300">
-                Available For New Projects
-              </span>
 
-            </motion.div>
+<div className="relative z-10 max-w-7xl mx-auto px-6 py-32">
 
-            <motion.h2
-              initial={{opacity:0,y:30}}
-              animate={{opacity:1,y:0}}
-              transition={{duration:.7}}
-              className="text-gray-400 text-xl mb-4"
-            >
-              Building intelligent systems with
-            </motion.h2>
+<div className="grid lg:grid-cols-2 gap-16 items-center">
 
+{/* LEFT */}
 
-            <motion.h1
-              initial={{opacity:0,y:20}}
-              animate={{opacity:1,y:0}}
-              transition={{delay:.3}}
-              className="text-6xl md:text-8xl font-black leading-none mb-8"
-            >
-              <span className="bg-gradient-to-r from-white via-purple-300 to-cyan-300 bg-clip-text text-transparent">
-                Harish
-              </span>
+<div>
 
-              <br/>
+<motion.div
+initial={{opacity:0}}
+animate={{opacity:1}}
+className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl mb-8"
+>
 
-              <span className="text-white">
-                C P
-              </span>
-            </motion.h1>
+<Sparkles
+size={16}
+className="text-purple-400"
+/>
 
+<span className="uppercase tracking-[4px] text-xs text-gray-300">
 
-            <motion.p
-              initial={{opacity:0}}
-              animate={{opacity:1}}
-              transition={{delay:.6}}
-              className="text-gray-400 text-xl leading-relaxed max-w-xl"
-            >
-              Generative AI Developer • Full Stack Engineer
+Available for Projects
 
-              <br/><br/>
+</span>
 
-              Creating scalable AI systems using
-              FastAPI, React, LLMs, RAG pipelines and automation.
-            </motion.p>
+</motion.div>
 
 
-            {/* STATS */}
+<motion.h1
+initial={{opacity:0,y:20}}
+animate={{opacity:1,y:0}}
+transition={{duration:.7}}
+className="text-6xl md:text-8xl font-black leading-none"
+>
 
-            <motion.div
-              initial={{opacity:0}}
-              animate={{opacity:1}}
-              transition={{delay:.8}}
-              className="grid grid-cols-3 gap-4 mt-10"
-            >
+<span className="bg-gradient-to-r from-purple-300 via-white to-cyan-300 bg-clip-text text-transparent">
 
-              {[
-                {
-                  value:"50+",
-                  label:"Projects"
-                },
-                {
-                  value:"AI",
-                  label:"RAG + LLM"
-                },
-                {
-                  value:"24/7",
-                  label:"Learning"
-                }
+Building Intelligent
 
-              ].map((item)=>(
+</span>
 
-                <div
-                  key={item.label}
-                  className="bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl p-4"
-                >
-                  <h3 className="text-3xl font-bold text-white">
-                    {item.value}
-                  </h3>
+<br/>
 
-                  <p className="text-sm text-gray-400">
-                    {item.label}
-                  </p>
+Systems
 
-                </div>
+</motion.h1>
 
-              ))}
 
-            </motion.div>
+<motion.p
+initial={{opacity:0}}
+animate={{opacity:1}}
+transition={{delay:.5}}
+className="mt-8 text-gray-400 text-xl leading-relaxed max-w-xl"
+>
 
+Hi, I'm <span className="text-white font-semibold">Harish C P</span>
 
-            {/* BUTTONS */}
+<br/><br/>
 
-            <div className="flex gap-4 mt-10">
+Generative AI Developer & Full Stack Engineer creating scalable systems using FastAPI, React, LLMs and automation.
 
-              <a
-                href="#projects"
-                className="group px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold flex items-center"
-              >
+</motion.p>
 
-                View Projects
 
-                <ArrowRight className="ml-2 group-hover:translate-x-2 transition"/>
+<div className="flex gap-4 mt-10">
 
-              </a>
+<a
+href="#projects"
+className="group px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 flex items-center font-semibold"
+>
 
-              <a
-                href="#contact"
-                className="px-8 py-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-lg"
-              >
-                Contact
-              </a>
+Explore Work
 
-            </div>
+<ArrowRight
+className="ml-2 group-hover:translate-x-2 transition"
+/>
 
+</a>
 
-            {/* TERMINAL */}
 
-            <motion.div
-              initial={{opacity:0}}
-              animate={{opacity:1}}
-              transition={{delay:1}}
-              className="mt-10 bg-black/40 rounded-3xl border border-white/10 p-6 backdrop-blur-xl"
-            >
+<a
+href="#contact"
+className="px-8 py-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl"
+>
 
-              <div className="flex gap-2 mb-5">
+Contact
 
-                <div className="w-3 h-3 rounded-full bg-red-500"/>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"/>
-                <div className="w-3 h-3 rounded-full bg-green-500"/>
+</a>
 
-              </div>
+</div>
 
-              <div className="space-y-2 font-mono text-sm">
 
-                {terminalLines
-                  .slice(0,lineIndex+1)
-                  .map((line)=>(
+<div className="grid grid-cols-3 gap-4 mt-12">
 
-                  <motion.div
-                    key={line}
-                    initial={{opacity:0}}
-                    animate={{opacity:1}}
-                    className="text-green-400"
-                  >
+<div className="rounded-3xl bg-white/5 p-5 border border-white/10">
 
-                    {line}
+<h2 className="text-3xl font-bold">
+50+
+</h2>
 
-                  </motion.div>
+<p className="text-gray-400 text-sm">
+Projects
+</p>
 
-                ))}
+</div>
 
-              </div>
 
-            </motion.div>
+<div className="rounded-3xl bg-white/5 p-5 border border-white/10">
 
-          </div>
+<h2 className="text-3xl font-bold">
+AI
+</h2>
 
+<p className="text-gray-400 text-sm">
+LLM + RAG
+</p>
 
-          {/* RIGHT */}
+</div>
 
-          <motion.div
-            initial={{opacity:0,x:100}}
-            animate={{opacity:1,x:0}}
-            transition={{duration:.8}}
-            className="relative hidden lg:block"
-          >
 
-            <div className="relative w-[450px] h-[450px] mx-auto">
+<div className="rounded-3xl bg-white/5 p-5 border border-white/10">
 
-              {/* glow */}
+<h2 className="text-3xl font-bold">
+24/7
+</h2>
 
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-cyan-500/30 blur-3xl rounded-full"/>
+<p className="text-gray-400 text-sm">
+Learning
+</p>
 
+</div>
 
-              {/* orbit labels */}
+</div>
 
-              {techStack.map((item,index)=>{
+</div>
 
-                const angle=(index/techStack.length)*360;
 
-                const radius=240;
 
-                const x=Math.cos(angle*Math.PI/180)*radius;
+{/* RIGHT */}
 
-                const y=Math.sin(angle*Math.PI/180)*radius;
+<motion.div
+initial={{opacity:0,x:50}}
+animate={{opacity:1,x:0}}
+className="space-y-6"
+>
 
-                return(
 
-                  <motion.div
-                    key={item}
-                    animate={{
-                      y:[0,-10,0]
-                    }}
-                    transition={{
-                      repeat:Infinity,
-                      duration:3+index
-                    }}
-                    style={{
-                      left:`calc(50% + ${x}px)`,
-                      top:`calc(50% + ${y}px)`
-                    }}
-                    className="absolute px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-xl text-sm"
-                  >
+{/* TERMINAL */}
 
-                    {item}
+<div className="rounded-[35px] border border-white/10 bg-white/5 backdrop-blur-2xl overflow-hidden">
 
-                  </motion.div>
+<div className="border-b border-white/10 px-6 py-4 flex gap-2">
 
-                )
+<div className="w-3 h-3 rounded-full bg-red-500"/>
+<div className="w-3 h-3 rounded-full bg-yellow-500"/>
+<div className="w-3 h-3 rounded-full bg-green-500"/>
 
-              })}
+</div>
 
+<div className="p-8 font-mono">
 
-              {/* IMAGE */}
+<div className="text-cyan-400 mb-5">
 
-              <motion.div
-                whileHover={{
-                  rotateY:8,
-                  rotateX:5,
-                  scale:1.04
-                }}
-                className="relative h-full w-full rounded-[40px] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl"
-              >
+$ npm run harish-ai
 
-                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-cyan-500/20 z-10"/>
+</div>
 
-                <Image
-                  src="/harish.jpeg"
-                  alt="Harish"
-                  fill
-                  priority
-                  className="object-cover"
-                />
+{bootMessages
+.slice(0,visible)
+.map((item)=>(
 
-              </motion.div>
+<motion.div
+key={item}
+initial={{opacity:0}}
+animate={{opacity:1}}
+className="text-green-400 mb-3"
+>
 
-            </div>
+{item}
 
-          </motion.div>
+</motion.div>
 
-        </div>
+))}
 
+</div>
 
-        {/* SCROLL */}
+</div>
 
-        <motion.div
-          animate={{
-            y:[0,10,0]
-          }}
-          transition={{
-            repeat:Infinity,
-            duration:2
-          }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
 
-          <ChevronDown className="text-white"/>
 
-        </motion.div>
+{/* GRID */}
 
-      </div>
+<div className="grid grid-cols-2 gap-4">
 
-    </section>
-  );
+{cards.map((item,index)=>(
+
+<motion.div
+key={item.title}
+whileHover={{
+scale:1.05,
+y:-5
+}}
+className="rounded-3xl p-6 bg-white/5 border border-white/10 backdrop-blur-xl"
+>
+
+<div className="mb-4 text-purple-400">
+
+{item.icon}
+
+</div>
+
+<h2 className="font-semibold">
+
+{item.title}
+
+</h2>
+
+<p className="text-sm text-gray-400 mt-2">
+
+{item.desc}
+
+</p>
+
+</motion.div>
+
+))}
+
+</div>
+
+
+<div className="rounded-3xl border border-purple-500/20 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 p-6">
+
+<div className="flex items-center gap-3">
+
+<Zap className="text-yellow-400"/>
+
+<div>
+
+<h3 className="font-semibold">
+
+Currently Building
+
+</h3>
+
+<p className="text-gray-400 text-sm">
+
+AI Inventory Platform + RAG Assistant
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+</motion.div>
+
+</div>
+
+</div>
+
+
+<motion.div
+animate={{
+y:[0,10,0]
+}}
+transition={{
+repeat:Infinity,
+duration:2
+}}
+className="absolute bottom-8 left-1/2 -translate-x-1/2"
+>
+
+<ChevronDown/>
+
+</motion.div>
+
+</section>
+
+)
+
 }
