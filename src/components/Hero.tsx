@@ -16,8 +16,6 @@ import {
 const bootMessages = [
   "Initializing AI Core...",
   "Loading FastAPI services...",
-  "Connecting Vector Database...",
-  "Starting LLM Engine...",
   "RAG System Online...",
   "System Ready ✓"
 ];
@@ -55,7 +53,7 @@ if(visible<bootMessages.length){
 
 const timer=setTimeout(()=>{
 setVisible(prev=>prev+1)
-},700)
+},500)
 
 return ()=>clearTimeout(timer)
 
@@ -113,7 +111,7 @@ Available for Projects
 initial={{opacity:0,y:20}}
 animate={{opacity:1,y:0}}
 transition={{duration:.7}}
-className="text-6xl md:text-8xl font-black leading-none"
+className="text-4xl md:text-6xl font-black leading-none"
 >
 
 <span className="bg-gradient-to-r from-purple-300 via-white to-cyan-300 bg-clip-text text-transparent">
@@ -240,9 +238,9 @@ className="space-y-6"
 
 </div>
 
-<div className="p-8 font-mono">
+<div className="p-6 font-mono text-sm">
 
-<div className="text-cyan-400 mb-5">
+<div className="text-cyan-400 mb-3">
 
 $ npm run harish-ai
 
@@ -256,7 +254,7 @@ $ npm run harish-ai
 key={item}
 initial={{opacity:0}}
 animate={{opacity:1}}
-className="text-green-400 mb-3"
+className="text-green-400 mb-2"
 >
 
 {item}
