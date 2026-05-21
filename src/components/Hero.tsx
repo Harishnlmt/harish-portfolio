@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
   Sparkles,
@@ -217,86 +218,108 @@ Learning
 
 
 
-{/* RIGHT */}
+{/* RIGHT - PROFILE IMAGE */}
 
 <motion.div
 initial={{opacity:0,x:50}}
 animate={{opacity:1,x:0}}
-className="space-y-6"
+className="flex flex-col items-center gap-6"
 >
 
-
-{/* TERMINAL */}
-
-<div className="rounded-[35px] border border-white/10 bg-white/5 backdrop-blur-2xl overflow-hidden">
-
-<div className="border-b border-white/10 px-6 py-4 flex gap-2">
-
-<div className="w-3 h-3 rounded-full bg-red-500"/>
-<div className="w-3 h-3 rounded-full bg-yellow-500"/>
-<div className="w-3 h-3 rounded-full bg-green-500"/>
-
-</div>
-
-<div className="p-6 font-mono text-sm">
-
-<div className="text-cyan-400 mb-3">
-
-$ npm run harish-ai
-
-</div>
-
-{bootMessages
-.slice(0,visible)
-.map((item)=>(
+{/* PROFILE IMAGE WITH ANIMATED BORDER */}
 
 <motion.div
-key={item}
-initial={{opacity:0}}
-animate={{opacity:1}}
-className="text-green-400 mb-2"
+animate={{
+  y: [0, -10, 0],
+}}
+transition={{
+  repeat: Infinity,
+  duration: 4,
+  ease: "easeInOut"
+}}
+className="relative w-full max-w-sm"
 >
 
-{item}
+{/* Animated gradient border container */}
+
+<div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-cyan-500 to-purple-500 rounded-[40px] p-1 opacity-75 blur-lg animate-pulse"/>
+
+{/* Glass morphism frame */}
+
+<div className="relative rounded-[40px] overflow-hidden backdrop-blur-2xl border-2 border-white/20 bg-gradient-to-br from-white/10 to-white/5 shadow-2xl">
+
+{/* Image wrapper */}
+
+<div className="relative w-full aspect-square overflow-hidden">
+
+<Image
+src="/harish.jpeg"
+alt="Harish C P"
+fill
+className="object-cover"
+priority
+/>
+
+{/* Overlay gradient */}
+
+<div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"/>
+
+</div>
+
+{/* Status indicator */}
+
+<motion.div
+animate={{
+  scale: [1, 1.2, 1],
+  boxShadow: [
+    "0 0 0 0 rgba(139, 92, 246, 0.7)",
+    "0 0 0 10px rgba(139, 92, 246, 0)",
+    "0 0 0 0 rgba(139, 92, 246, 0)"
+  ]
+}}
+transition={{
+  repeat: Infinity,
+  duration: 2
+}}
+className="absolute bottom-6 right-6 w-5 h-5 bg-green-400 rounded-full border-2 border-white/50"
+/>
+
+</div>
 
 </motion.div>
 
-))}
 
-</div>
+{/* Skills grid below image */}
 
-</div>
-
-
-
-{/* GRID */}
-
-<div className="grid grid-cols-2 gap-4">
+<div className="grid grid-cols-2 gap-3 w-full max-w-sm">
 
 {cards.map((item,index)=>(
 
 <motion.div
 key={item.title}
+initial={{opacity:0,y:20}}
+animate={{opacity:1,y:0}}
+transition={{delay:0.1*index}}
 whileHover={{
 scale:1.05,
 y:-5
 }}
-className="rounded-3xl p-6 bg-white/5 border border-white/10 backdrop-blur-xl"
+className="rounded-2xl p-4 bg-white/5 border border-white/10 backdrop-blur-xl text-center"
 >
 
-<div className="mb-4 text-purple-400">
+<div className="mb-2 text-purple-400 flex justify-center">
 
 {item.icon}
 
 </div>
 
-<h2 className="font-semibold">
+<h2 className="font-semibold text-sm">
 
 {item.title}
 
 </h2>
 
-<p className="text-sm text-gray-400 mt-2">
+<p className="text-xs text-gray-400 mt-1">
 
 {item.desc}
 
@@ -309,21 +332,28 @@ className="rounded-3xl p-6 bg-white/5 border border-white/10 backdrop-blur-xl"
 </div>
 
 
-<div className="rounded-3xl border border-purple-500/20 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 p-6">
+{/* Currently building card */}
 
-<div className="flex items-center gap-3">
+<motion.div
+initial={{opacity:0,y:20}}
+animate={{opacity:1,y:0}}
+transition={{delay:0.4}}
+className="w-full max-w-sm rounded-2xl border border-purple-500/30 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 p-4"
+>
 
-<Zap className="text-yellow-400"/>
+<div className="flex items-center gap-2">
+
+<Zap className="text-yellow-400 flex-shrink-0"/>
 
 <div>
 
-<h3 className="font-semibold">
+<h3 className="font-semibold text-sm">
 
 Currently Building
 
 </h3>
 
-<p className="text-gray-400 text-sm">
+<p className="text-gray-400 text-xs mt-0.5">
 
 AI Inventory Platform + RAG Assistant
 
@@ -333,7 +363,7 @@ AI Inventory Platform + RAG Assistant
 
 </div>
 
-</div>
+</motion.div>
 
 
 </motion.div>
