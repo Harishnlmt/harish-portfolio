@@ -1,32 +1,32 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #030014;
+  --color-background: #000000;
   --color-foreground: #ffffff;
-  
-  --color-neon-purple: #a855f7;
-  --color-neon-blue: #3b82f6;
-  --color-neon-pink: #ec4899;
-  --color-neon-cyan: #22d3ee;
-  
-  --color-glass-bg: rgba(17, 25, 40, 0.75);
-  --color-glass-border: rgba(255, 255, 255, 0.125);
-  
+
+  --color-neon-yellow: #facc15;
+  --color-neon-gold: #eab308;
+  --color-neon-amber: #f59e0b;
+  --color-neon-orange: #f97316;
+
+  --color-glass-bg: rgba(0, 0, 0, 0.85);
+  --color-glass-border: rgba(250, 204, 21, 0.15);
+
   --animate-typing: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-  
+
   @keyframes typing {
     from { width: 0 }
     to { width: 100% }
   }
-  
+
   @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: var(--color-neon-purple) }
+    50% { border-color: var(--color-neon-yellow) }
   }
 }
 
 :root {
-  --background: #030014;
+  --background: #000000;
   --foreground: #ffffff;
 }
 
@@ -47,14 +47,14 @@ body {
 .glass-card {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(250, 204, 21, 0.1);
   transition: all 0.3s ease;
 }
 
 .glass-card:hover {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(250, 204, 21, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(250, 204, 21, 0.15);
 }
 
 /* Custom Scrollbar */
@@ -63,15 +63,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #030014;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e1b4b;
+  background: #292524;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #312e81;
+  background: #eab308;
 }
-
