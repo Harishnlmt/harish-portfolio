@@ -25,33 +25,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      const result = await response.json();
-
-      if (result.success) {
-        setFormData({
-          name: '',
-          email: '',
-          message: '',
-        });
-      
-        alert(
-          'Thank you! Your message has been sent successfully.'
-        );
-      }
-    } catch (error) {
-      console.error('Error sending message:', error);
-      alert('Failed to send message');
-    } finally {
-      setIsSubmitting(false);
-    }
+   alert('Work IN Progress!');
   };
 
   return (
