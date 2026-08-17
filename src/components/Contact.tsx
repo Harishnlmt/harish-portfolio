@@ -33,9 +33,18 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      if (response.ok) {
-        setFormData({ name: '', email: '', message: '' });
-        alert('Message sent successfully!');
+      const result = await response.json();
+
+      if (result.success) {
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+      
+        alert(
+          'Thank you! Your message has been sent successfully.'
+        );
       }
     } catch (error) {
       console.error('Error sending message:', error);

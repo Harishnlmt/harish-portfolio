@@ -7,12 +7,12 @@ import { Briefcase } from 'lucide-react';
 const experiences = [
     {
         company: 'Nilgiris Likemind Technologies Pvt Ltd',
-        role: 'Generative AI Developer (Full Stack)',
+        role: 'Python Full Stack Developer',
         period: '2023 - Present',
         highlights: [
-            'Built LLM-powered apps with production-grade reliability.',
-            'Developed advanced RAG systems for complex document intelligence.',
-            'Integrated AI into real-world business workflows, automating manual tasks.'
+            'Engineered end-to-end full-stack solutions using Python, FastAPI, React.js, and PostgreSQL.',
+            'Designed high-performance, responsive React.js applications with clean and intuitive user experiences.',
+            'Leveraged Generative AI, LLMs, and automation to build intelligent business solutions and streamline operations.'
         ]
     }
 ];

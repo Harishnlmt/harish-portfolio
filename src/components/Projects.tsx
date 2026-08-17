@@ -14,25 +14,70 @@ const GithubIcon = ({ className }: { className?: string }) => (
 
 const projects = [
   {
-    title: 'TeaMS – AI-Powered SaaS',
-    description: 'AI chatbot + RAG-based document intelligence system for enterprise collaboration.',
-    tech: ['React', 'FastAPI', 'RAG', 'LLMs'],
-    links: { live: 'https://teams-platform.example.com', github: 'https://github.com/harishcp/teams-platform' },
+    title: 'HMS – Hotel Management SaaS',
+    description:
+      'A comprehensive multi-property hotel management platform featuring reservations, front office operations, housekeeping, billing, guest management, reporting, and centralized property administration.',
+    tech: ['React', 'FastAPI', 'PostgreSQL', 'Docker'],
+    links: {
+      live: 'https://hms.example.com',
+      github: 'https://github.com/harishcp/hms'
+    },
     color: 'from-neon-yellow/20 to-neon-gold/20'
   },
   {
     title: 'Stanes I2P Portal',
-    description: 'Indent-to-payment system with AI automation and RAG-driven insights.',
-    tech: ['Next.js', 'Python', 'RAG', 'Automation'],
-    links: { live: 'https://stanes-i2p.example.com', github: 'https://github.com/harishcp/stanes-i2p' },
+    description:
+      'Enterprise Indent-to-Payment procurement platform integrating indent management, purchase orders, GRNs, invoice processing, payment workflows, approvals, and ERP synchronization.',
+    tech: ['React', 'FastAPI', 'PostgreSQL', 'ERP Integration'],
+    links: {
+      live: '#',
+      github: '#'
+    },
     color: 'from-neon-gold/20 to-neon-amber/20'
   },
   {
-    title: 'RAG Document QA System',
-    description: 'Upload PDFs and query documents using LLMs and vector databases.',
-    tech: ['React', 'OpenAI', 'FAISS', 'FastAPI'],
-    links: { live: 'https://rag-qa-system.example.com', github: 'https://github.com/harishcp/rag-document-qa' },
+    title: 'HarishGPT',
+    description:
+      'An intelligent chatbot platform with PDF document upload, semantic search, conversation history, context-aware responses, and RAG-powered knowledge retrieval.',
+    tech: ['React', 'FastAPI', 'RAG', 'LLMs', 'ChromaDB'],
+    links: {
+      live: '#',
+      github: '#'
+    },
     color: 'from-neon-amber/20 to-neon-orange/20'
+  },
+  {
+    title: 'ISC Football Academy',
+    description:
+      'Modern football academy website showcasing training programs, coaching staff, facilities, achievements, and student enrollment management.',
+    tech: ['React', 'Vite', 'JavaScript'],
+    links: {
+      live: 'https://iscfootball-sigma.vercel.app/',
+      github: '#'
+    },
+    color: 'from-neon-orange/20 to-neon-red/20'
+  },
+  {
+    title: 'Mala’s Kitchen',
+    description:
+      'Restaurant and food ordering website featuring menu management, food showcase, customer engagement, and responsive user experience.',
+    tech: ['React', 'JavaScript', 'Responsive Design'],
+    links: {
+      live: 'https://malaskitchen.vercel.app/',
+      github: '#'
+    },
+    color: 'from-neon-red/20 to-neon-pink/20'
+  },
+  {
+    title: 'MJM Catering Services',
+    description:
+      'Professional catering business website highlighting event services, menu offerings, booking enquiries, and customer testimonials.',
+    tech: ['React', 'JavaScript', 'UI/UX'],
+    links: {
+      live: 'https://mjm-catering.vercel.app/',
+      github: '#'
+    },
+    color: 'from-neon-pink/20 to-neon-purple/20'
   }
 ];
 

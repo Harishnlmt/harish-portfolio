@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -15,8 +15,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Harish C P - Generative AI Developer & Full Stack Engineer",
   description: "Building intelligent AI-powered systems with FastAPI, React, and LLMs. RAG, automation, and scalable full-stack solutions.",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   metadataBase: new URL("https://harish-portfolio.example.com"),
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

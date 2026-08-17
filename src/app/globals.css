@@ -74,3 +74,151 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #eab308;
 }
+
+@keyframes letterIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-letter-in {
+  animation: letterIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animate-slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes lineDraw {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.animate-line-draw {
+  animation: lineDraw 0.5s ease-out 0.15s both;
+}
+
+@keyframes fadeUpDelayed {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up-delayed {
+  animation: fadeUpDelayed 0.7s ease-out 1s forwards;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.animate-blink {
+  animation: blink 0.9s step-end infinite;
+}
+
+@keyframes floatSymbol {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(6deg);
+  }
+}
+.animate-float {
+  animation: floatSymbol ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-letter-in,
+  .animate-slide-in,
+  .animate-line-draw,
+  .animate-fade-up-delayed,
+  .animate-shimmer,
+  .animate-blink,
+  .animate-float {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@keyframes aboutSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-about-spin {
+  animation: aboutSpin 8s linear infinite;
+}
+
+@keyframes aboutScan {
+  0% {
+    transform: translateY(-120%);
+  }
+  100% {
+    transform: translateY(420%);
+  }
+}
+.animate-about-scan {
+  animation: aboutScan 3.2s ease-in-out infinite;
+}
+
+@keyframes aboutBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.animate-about-blink {
+  animation: aboutBlink 0.9s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-about-spin,
+  .animate-about-scan,
+  .animate-about-blink {
+    animation: none !important;
+  }
+}
