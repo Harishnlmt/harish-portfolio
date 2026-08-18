@@ -48,7 +48,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex justify-between items-center">
-        
+
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8 ml-auto">
@@ -61,7 +61,7 @@ export default function Navbar() {
                 {item.name}
               </a>
             ))}
-            <a href="/harish.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-full bg-neon-yellow/20 border border-neon-yellow/50 text-neon-yellow text-xs lg:text-sm font-bold hover:bg-neon-yellow hover:text-black transition-colors">
+            <a href="/Harish.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-full bg-neon-yellow/20 border border-neon-yellow/50 text-neon-yellow text-xs lg:text-sm font-bold hover:bg-neon-yellow hover:text-black transition-colors">
               Resume
             </a>
           </div>
@@ -100,11 +100,11 @@ export default function Navbar() {
                   {item.name}
                 </a>
               ))}
-                <div className="px-3 pt-3">
-                  <a href="/harish.pdf" target="_blank" rel="noopener noreferrer" className="block w-full py-2.5 rounded-lg bg-neon-yellow text-black text-sm font-bold text-center transition-transform active:scale-95">
-                    Resume
-                  </a>
-                </div>
+              <div className="px-3 pt-3">
+                <a href="/Harish.pdf" target="_blank" rel="noopener noreferrer" className="block w-full py-2.5 rounded-lg bg-neon-yellow text-black text-sm font-bold text-center transition-transform active:scale-95">
+                  Resume
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

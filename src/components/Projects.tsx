@@ -1,12 +1,20 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ExternalLink, FolderCode } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { FolderCode, ExternalLink } from 'lucide-react';
 
 const GithubIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.81 1.6a2.7 2.7 0 0 1-1.19-2.1c0-1.1.8-2 1.8-2" />
     <path d="M9 18c-4.51 2-5-2-7-2" />
   </svg>
@@ -15,144 +23,220 @@ const GithubIcon = ({ className }: { className?: string }) => (
 const projects = [
   {
     title: 'HMS – Hotel Management SaaS',
+    image: '/projects/hms.png',
     description:
       'A comprehensive multi-property hotel management platform featuring reservations, front office operations, housekeeping, billing, guest management, reporting, and centralized property administration.',
     tech: ['React', 'FastAPI', 'PostgreSQL', 'Docker'],
     links: {
       live: 'https://hms.example.com',
-      github: 'https://github.com/harishcp/hms'
+      github: 'https://github.com/harishcp/hms',
     },
-    color: 'from-neon-yellow/20 to-neon-gold/20'
   },
   {
     title: 'Stanes I2P Portal',
+    image: '/projects/teams.png',
     description:
       'Enterprise Indent-to-Payment procurement platform integrating indent management, purchase orders, GRNs, invoice processing, payment workflows, approvals, and ERP synchronization.',
-    tech: ['React', 'FastAPI', 'PostgreSQL', 'ERP Integration'],
+    tech: ['React', 'FastAPI', 'PostgreSQL', 'ERP'],
     links: {
       live: '#',
-      github: '#'
+      github: '#',
     },
-    color: 'from-neon-gold/20 to-neon-amber/20'
   },
   {
     title: 'HarishGPT',
+    image: '/projects/harishgpt.png',
     description:
-      'An intelligent chatbot platform with PDF document upload, semantic search, conversation history, context-aware responses, and RAG-powered knowledge retrieval.',
+      'An intelligent chatbot platform with PDF upload, semantic search, conversation memory, RAG-powered knowledge retrieval, and context-aware AI responses.',
     tech: ['React', 'FastAPI', 'RAG', 'LLMs', 'ChromaDB'],
     links: {
       live: '#',
-      github: '#'
+      github: '#',
     },
-    color: 'from-neon-amber/20 to-neon-orange/20'
   },
   {
     title: 'ISC Football Academy',
+    image: '/projects/iscfootball.png',
     description:
-      'Modern football academy website showcasing training programs, coaching staff, facilities, achievements, and student enrollment management.',
+      'Modern football academy website showcasing coaching staff, facilities, training programs, achievements, and student enrollment management.',
     tech: ['React', 'Vite', 'JavaScript'],
     links: {
       live: 'https://iscfootball-sigma.vercel.app/',
-      github: '#'
+      github: '#',
     },
-    color: 'from-neon-orange/20 to-neon-red/20'
   },
   {
-    title: 'Mala’s Kitchen',
+    title: "Mala's Kitchen",
+    image: '/projects/malaskitchen.png',
     description:
-      'Restaurant and food ordering website featuring menu management, food showcase, customer engagement, and responsive user experience.',
-    tech: ['React', 'JavaScript', 'Responsive Design'],
+      'Restaurant and food ordering website featuring menu management, food showcases, customer engagement, and a fully responsive experience.',
+    tech: ['React', 'JavaScript', 'Responsive'],
     links: {
       live: 'https://malaskitchen.vercel.app/',
-      github: '#'
+      github: '#',
     },
-    color: 'from-neon-red/20 to-neon-pink/20'
   },
   {
     title: 'MJM Catering Services',
+    image: '/projects/mjm.png',
     description:
       'Professional catering business website highlighting event services, menu offerings, booking enquiries, and customer testimonials.',
     tech: ['React', 'JavaScript', 'UI/UX'],
     links: {
       live: 'https://mjm-catering.vercel.app/',
-      github: '#'
+      github: '#',
     },
-    color: 'from-neon-pink/20 to-neon-purple/20'
-  }
+  },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 sm:py-20 md:py-24 relative bg-black">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+    <section
+      id="projects"
+      className="relative py-20 md:py-28 bg-black"
+    >
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12 sm:mb-16"
+          className="mb-14"
         >
-          <div className="inline-flex items-center space-x-2 px-2.5 py-1 rounded-full bg-neon-yellow/10 border border-neon-yellow/20 mb-4">
-            <FolderCode className="w-3 h-3 sm:w-4 sm:h-4 text-neon-yellow" />
-            <span className="text-xs font-bold text-neon-yellow uppercase tracking-wider">Featured Work</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-yellow-500/20 bg-yellow-500/10 mb-5">
+            <FolderCode className="w-4 h-4 text-yellow-400" />
+            <span className="text-xs font-bold tracking-widest uppercase text-yellow-400">
+              Featured Work
+            </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white">
-            Latest <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-yellow to-neon-gold">Innovations</span>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white">
+            Latest{' '}
+            <span className="bg-gradient-to-r from-yellow-300 via-yellow-500 to-amber-500 bg-clip-text text-transparent">
+              Innovations
+            </span>
           </h2>
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        {/* Projects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{
+                y: -10,
+                transition: { duration: 0.25 },
+              }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="glass-card group rounded-2xl sm:rounded-3xl overflow-hidden border border-neon-yellow/5 flex flex-col h-full hover:border-neon-yellow/20 transition-all"
+              transition={{
+                delay: idx * 0.08,
+              }}
+              className="
+                group
+                overflow-hidden
+                rounded-3xl
+                bg-white/[0.03]
+                backdrop-blur-xl
+                border
+                border-white/10
+                shadow-[0_10px_40px_rgba(255,215,0,0.08)]
+                hover:border-yellow-500/30
+                transition-all
+                duration-500
+              "
             >
-              {/* Image Section */}
-              <div className={cn("h-32 sm:h-40 md:h-48 bg-gradient-to-br relative overflow-hidden", project.color)}>
-                <div className="absolute inset-0 opacity-10" />
+              {/* Project Image */}
+              <div className="relative h-56 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
               </div>
 
-              {/* Content Section */}
-              <div className="p-4 sm:p-6 flex flex-col flex-1">
-                <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-neon-yellow transition-colors">
+              {/* Content */}
+              <div className="p-6 flex flex-col h-[260px]">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-400 mb-4 line-clamp-2 leading-relaxed">
+
+                <p className="text-sm text-gray-400 mb-5 line-clamp-3 leading-relaxed">
                   {project.description}
                 </p>
 
-                {/* Tech Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4 mt-auto">
-                  {project.tech.map((t, tIdx) => (
-                    <span key={tIdx} className="text-[9px] sm:text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded-md bg-white/5 text-gray-400 border border-white/5 group-hover:border-neon-yellow/20 group-hover:text-neon-yellow transition-all">
-                      {t}
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mt-auto mb-5">
+                  {project.tech.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="
+                        px-2.5
+                        py-1
+                        text-[10px]
+                        font-semibold
+                        uppercase
+                        tracking-wider
+                        rounded-lg
+                        bg-white/5
+                        border
+                        border-white/10
+                        text-gray-300
+                      "
+                    >
+                      {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Links */}
-                <div className="flex items-center gap-2">
+                {/* Actions */}
+                <div className="flex items-center gap-3">
                   <a
                     href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2 sm:py-2.5 rounded-lg bg-white/5 border border-white/10 text-xs sm:text-sm font-bold text-center hover:bg-neon-yellow/10 hover:border-neon-yellow/30 transition-colors"
+                    className="
+                      flex-1
+                      flex
+                      items-center
+                      justify-center
+                      gap-2
+                      py-2.5
+                      rounded-xl
+                      bg-yellow-500/10
+                      border
+                      border-yellow-500/20
+                      text-yellow-400
+                      font-semibold
+                      hover:bg-yellow-500/20
+                      transition-all
+                    "
                   >
+                    <ExternalLink className="w-4 h-4" />
                     Demo
                   </a>
+
                   <a
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2 sm:px-3 py-2 sm:py-2.5 rounded-lg bg-white/5 border border-white/10 hover:bg-neon-yellow/10 hover:border-neon-yellow/30 transition-colors"
+                    className="
+                      p-2.5
+                      rounded-xl
+                      bg-white/5
+                      border
+                      border-white/10
+                      hover:border-yellow-500/30
+                      hover:bg-yellow-500/10
+                      transition-all
+                    "
                   >
-                    <GithubIcon className="w-4 h-4" />
+                    <GithubIcon className="w-5 h-5 text-white" />
                   </a>
                 </div>
               </div>
