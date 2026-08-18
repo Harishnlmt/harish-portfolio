@@ -90,11 +90,31 @@ const projects = [
 ];
 
 export default function Projects() {
+  const [activeIdx, setActiveIdx] = React.useState(0);
+  const scrollerRef = React.useRef<HTMLDivElement>(null);
+
+  // Track which card is centered, to drive the mobile dot indicators
+  const handleScroll = () => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const cardWidth = el.firstElementChild
+      ? (el.firstElementChild as HTMLElement).offsetWidth + 16 // + gap
+      : el.clientWidth;
+    const idx = Math.round(el.scrollLeft / cardWidth);
+    setActiveIdx(Math.min(projects.length - 1, Math.max(0, idx)));
+  };
+
+  const scrollToIdx = (idx: number) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.children[idx] as HTMLElement | undefined;
+    if (card) {
+      el.scrollTo({ left: card.offsetLeft - el.offsetLeft, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section
-      id="projects"
-      className="relative py-20 md:py-28 bg-black"
-    >
+    <section id="projects" className="relative py-20 md:py-28 bg-black">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Header */}
         <motion.div
@@ -119,8 +139,21 @@ export default function Projects() {
           </h2>
         </motion.div>
 
-        {/* Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        {/* Mobile: horizontal swipe carousel | md+: grid */}
+        <div
+          ref={scrollerRef}
+          onScroll={handleScroll}
+          className="
+            flex md:grid
+            md:grid-cols-2 xl:grid-cols-3
+            gap-6 md:gap-8
+            overflow-x-auto md:overflow-visible
+            snap-x snap-mandatory md:snap-none
+            -mx-4 px-4 md:mx-0 md:px-0
+            pb-4 md:pb-0
+            [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+          "
+        >
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
@@ -136,6 +169,9 @@ export default function Projects() {
               }}
               className="
                 group
+                shrink-0
+                w-[85vw] sm:w-[70vw] md:w-auto
+                snap-center md:snap-align-none
                 overflow-hidden
                 rounded-3xl
                 bg-white/[0.03]
@@ -241,6 +277,20 @@ export default function Projects() {
                 </div>
               </div>
             </motion.div>
+          ))}
+        </div>
+
+        {/* Dot indicators — mobile only */}
+        <div className="flex md:hidden justify-center gap-2 mt-6">
+          {projects.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => scrollToIdx(idx)}
+              aria-label={`Go to project ${idx + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeIdx === idx ? 'w-6 bg-yellow-400' : 'w-2 bg-white/20'
+              }`}
+            />
           ))}
         </div>
       </div>
