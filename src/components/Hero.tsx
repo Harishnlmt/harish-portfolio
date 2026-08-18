@@ -41,7 +41,7 @@ export default function Hero() {
       return () => clearTimeout(pause);
     }
 
-   
+
 
     if (isDeleting && displayText === '') {
       const pause = setTimeout(() => {
@@ -90,7 +90,7 @@ export default function Hero() {
           priority
           quality={100}
           sizes="100vw"
-          className="object-cover object-[70%_center]"
+          className="object-cover object-[70%_center] brightness-110 contrast-110"
         />
       </div>
 
@@ -103,12 +103,12 @@ export default function Hero() {
           priority
           quality={100}
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-center brightness-110 contrast-110"
         />
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent md:from-black md:via-black/60 md:to-transparent" />
@@ -283,10 +283,10 @@ export default function Hero() {
 
       {/* Mobile Floating Buttons */}
       <div className="fixed bottom-6 right-4 z-50 flex flex-col gap-3 md:hidden">
-  {/* Projects */}
-  <button
-    onClick={() => scrollToSection("projects")}
-    className="
+        {/* Projects */}
+        <button
+          onClick={() => scrollToSection("projects")}
+          className="
       flex items-center gap-3
       bg-yellow-500 text-black
       px-5 py-3 rounded-full
@@ -294,15 +294,15 @@ export default function Hero() {
       active:scale-95
       transition-all duration-300
     "
-  >
-    <FaFolderOpen size={18} />
-    <span>Projects</span>
-  </button>
+        >
+          <FaFolderOpen size={18} />
+          <span>Projects</span>
+        </button>
 
-  {/* Contact */}
-  <button
-    onClick={() => scrollToSection("contact")}
-    className="
+        {/* Contact */}
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="
       flex items-center gap-3
       bg-white/95 backdrop-blur-md
       text-black
@@ -311,13 +311,13 @@ export default function Hero() {
       active:scale-95
       transition-all duration-300
     "
-  >
-    <FaEnvelope size={18} />
-    <span>Contact</span>
-  </button>
-</div>
+        >
+          <FaEnvelope size={18} />
+          <span>Contact</span>
+        </button>
+      </div>
 
-     
+
     </section>
   );
 }
