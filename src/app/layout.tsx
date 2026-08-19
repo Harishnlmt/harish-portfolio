@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Harish C P - Generative AI Developer & Full Stack Engineer",
+  title: "Harish C P - Python FUll Stack Developer | AI Engineer ",
   description: "Building intelligent AI-powered systems with FastAPI, React, and LLMs. RAG, automation, and scalable full-stack solutions.",
-  metadataBase: new URL("https://harish-portfolio.example.com"),
+  metadataBase: new URL("https://harishcp.in"),
 };
 
 export const viewport: Viewport = {
