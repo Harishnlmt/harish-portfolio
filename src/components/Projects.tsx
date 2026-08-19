@@ -124,16 +124,16 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-yellow-500/20 bg-yellow-500/10 mb-5">
-            <FolderCode className="w-4 h-4 text-yellow-400" />
-            <span className="text-xs font-bold tracking-widest uppercase text-yellow-400">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-premium-red/20 bg-premium-red/10 mb-5">
+            <FolderCode className="w-4 h-4 text-premium-red-light" />
+            <span className="text-xs font-bold tracking-widest uppercase text-premium-red-light">
               Featured Work
             </span>
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white">
             Latest{' '}
-            <span className="bg-gradient-to-r from-yellow-300 via-yellow-500 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-premium-red-light via-premium-red to-premium-red-dark bg-clip-text text-transparent">
               Innovations
             </span>
           </h2>
@@ -179,7 +179,7 @@ export default function Projects() {
                 border
                 border-white/10
                 shadow-[0_10px_40px_rgba(255,215,0,0.08)]
-                hover:border-yellow-500/30
+                hover:border-premium-red/30
                 transition-all
                 duration-500
               "
@@ -198,7 +198,7 @@ export default function Projects() {
 
               {/* Content */}
               <div className="p-6 flex flex-col h-[260px]">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-premium-red-light transition-colors">
                   {project.title}
                 </h3>
 
@@ -244,12 +244,12 @@ export default function Projects() {
                       gap-2
                       py-2.5
                       rounded-xl
-                      bg-yellow-500/10
+                      bg-premium-red/10
                       border
-                      border-yellow-500/20
-                      text-yellow-400
+                      border-premium-red/20
+                      text-premium-red-light
                       font-semibold
-                      hover:bg-yellow-500/20
+                      hover:bg-premium-red/20
                       transition-all
                     "
                   >
@@ -267,8 +267,8 @@ export default function Projects() {
                       bg-white/5
                       border
                       border-white/10
-                      hover:border-yellow-500/30
-                      hover:bg-yellow-500/10
+                      hover:border-premium-red/30
+                      hover:bg-premium-red/10
                       transition-all
                     "
                   >
@@ -288,7 +288,7 @@ export default function Projects() {
               onClick={() => scrollToIdx(idx)}
               aria-label={`Go to project ${idx + 1}`}
               className={`h-2 rounded-full transition-all duration-300 ${
-                activeIdx === idx ? 'w-6 bg-yellow-400' : 'w-2 bg-white/20'
+                activeIdx === idx ? 'w-6 bg-premium-red-light' : 'w-2 bg-white/20'
               }`}
             />
           ))}

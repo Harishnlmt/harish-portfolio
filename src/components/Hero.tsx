@@ -118,7 +118,7 @@ export default function Hero() {
         {FLOATING_SYMBOLS.map((item, i) => (
           <span
             key={i}
-            className={`absolute font-mono text-yellow-500/20 ${item.size} animate-float`}
+            className={`absolute font-mono text-premium-red/20 ${item.size} animate-float`}
             style={{
               top: item.top,
               left: item.left,
@@ -141,7 +141,7 @@ export default function Hero() {
             <div className="mb-4 overflow-hidden">
               <p
                 className={`
-                  text-yellow-500
+                  text-premium-red
                   uppercase
                   tracking-[0.35em]
                   text-[10px]
@@ -154,7 +154,7 @@ export default function Hero() {
                   ${mounted ? 'animate-slide-in' : 'opacity-0'}
                 `}
               >
-                <span className="inline-block h-px w-6 bg-yellow-500 origin-left animate-line-draw" />
+                <span className="inline-block h-px w-6 bg-premium-red origin-left animate-line-draw" />
                 HEY THERE, I AM
               </p>
             </div>
@@ -184,16 +184,16 @@ export default function Hero() {
                 className="
                   ml-2
                   md:ml-3
-                  text-yellow-500
+                  text-premium-red
                   text-[42px]
                   sm:text-5xl
                   md:text-7xl
                   lg:text-8xl
                   tracking-wide
                   bg-gradient-to-r
-                  from-yellow-500
-                  via-yellow-300
-                  to-yellow-500
+                  from-premium-red
+                  via-premium-red-light
+                  to-premium-red
                   bg-[length:200%_auto]
                   bg-clip-text
                   text-transparent
@@ -209,7 +209,7 @@ export default function Hero() {
               className="
                 font-mono
                 uppercase
-                text-yellow-500
+                text-premium-red
                 text-[11px]
                 sm:text-sm
                 md:text-lg
@@ -222,7 +222,7 @@ export default function Hero() {
             >
               {'< '}
               {displayText}
-              <span className="animate-blink border-r-2 border-yellow-500 ml-0.5" />
+              <span className="animate-blink border-r-2 border-premium-red ml-0.5" />
               {' />'}
             </p>
 
@@ -238,7 +238,7 @@ export default function Hero() {
                   overflow-hidden
                   px-8
                   py-4
-                  bg-yellow-500
+                  bg-premium-red
                   text-black
                   font-semibold
                   rounded-full
@@ -246,7 +246,7 @@ export default function Hero() {
                   transition-all
                   duration-300
                   shadow-lg
-                  shadow-yellow-500/20
+                  shadow-premium-red/20
                 "
               >
                 <span className="relative z-10">View Projects</span>
@@ -266,7 +266,7 @@ export default function Hero() {
                   rounded-full
                   backdrop-blur-sm
                   hover:bg-white/10
-                  hover:border-yellow-500/50
+                  hover:border-premium-red/50
                   transition-all
                   duration-300
                 "
@@ -288,7 +288,7 @@ export default function Hero() {
           onClick={() => scrollToSection("projects")}
           className="
       flex items-center gap-3
-      bg-yellow-500 text-black
+      bg-premium-red text-black
       px-5 py-3 rounded-full
       shadow-xl font-semibold
       active:scale-95

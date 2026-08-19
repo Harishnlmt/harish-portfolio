@@ -39,13 +39,13 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center space-x-2 px-2.5 py-1 rounded-full bg-neon-yellow/10 border border-neon-yellow/20 mb-4">
-              <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 text-neon-yellow" />
-              <span className="text-xs font-bold text-neon-yellow uppercase tracking-wider">Connect</span>
+            <div className="inline-flex items-center space-x-2 px-2.5 py-1 rounded-full bg-premium-red/10 border border-premium-red/20 mb-4">
+              <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 text-premium-red" />
+              <span className="text-xs font-bold text-premium-red uppercase tracking-wider">Connect</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 text-white">
-              Let's <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-yellow to-neon-gold">Collaborate</span>.
+              Let's <span className="bg-clip-text text-transparent bg-gradient-to-r from-premium-red to-premium-red-light">Collaborate</span>.
             </h2>
 
             <p className="text-sm sm:text-base text-gray-400 mb-8 max-w-md leading-relaxed">
@@ -55,9 +55,9 @@ export default function Contact() {
             {/* Contact Links */}
             <div className="space-y-4 sm:space-y-5">
               {[
-                { icon: Mail, label: 'Email', value: 'harishcp2710@gmail.com', color: 'text-neon-yellow' },
-                { icon: LinkedinIcon, label: 'LinkedIn', value: 'linkedin.com/in/harishcp', color: 'text-neon-gold' },
-                { icon: GithubIcon, label: 'GitHub', value: 'github.com/harishcp', color: 'text-neon-amber' },
+                { icon: Mail, label: 'Email', value: 'harishcp2710@gmail.com', color: 'text-premium-red' },
+                { icon: LinkedinIcon, label: 'LinkedIn', value: 'linkedin.com/in/harishcp', color: 'text-premium-red-light' },
+                { icon: GithubIcon, label: 'GitHub', value: 'github.com/harishcp', color: 'text-premium-red-dark' },
               ].map((link, idx) => (
                 <div key={idx} className="flex items-center space-x-3">
                   <div className={cn("p-2 sm:p-2.5 rounded-lg bg-white/5 border border-white/10", link.color)}>
@@ -78,7 +78,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-neon-yellow/10 relative"
+            className="glass-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-premium-red/10 relative"
           >
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
               {/* Name & Email Row */}
@@ -91,7 +91,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-3 sm:px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-neon-yellow transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-3 sm:px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-premium-red transition-all"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -102,7 +102,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-3 sm:px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-neon-yellow transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-3 sm:px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-premium-red transition-all"
                   />
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-3 sm:px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-neon-yellow transition-all resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-3 sm:px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-premium-red transition-all resize-none"
                 />
               </div>
 
@@ -124,7 +124,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full group relative px-4 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-neon-yellow font-bold text-black text-sm sm:text-base transition-all hover:shadow-[0_0_20px_rgba(250,204,21,0.4)] active:scale-95 disabled:opacity-50"
+                className="w-full group relative px-4 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-premium-red font-bold text-black text-sm sm:text-base transition-all hover:shadow-[0_0_20px_rgba(220,38,38,0.3)] active:scale-95 disabled:opacity-50"
               >
                 <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                 <Send className="inline ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

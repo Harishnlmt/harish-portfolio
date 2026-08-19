@@ -56,7 +56,7 @@ export default function Skills() {
           backgroundSize: '26px 26px',
         }}
       />
-      <div className="absolute top-1/3 -right-40 w-96 h-96 bg-yellow-500/10 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/3 -right-40 w-96 h-96 bg-premium-red/10 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -66,16 +66,16 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 mb-6"
+            className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-premium-red/10 border border-premium-red/20 mb-6"
           >
-            <Hexagon className="w-4 h-4 text-yellow-500" />
-            <span className="text-xs font-bold text-yellow-500 uppercase tracking-widest">
+            <Hexagon className="w-4 h-4 text-premium-red" />
+            <span className="text-xs font-bold text-premium-red uppercase tracking-widest">
               Skill Radar
             </span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
-            Scanning My <span className="text-yellow-500">Technical Skills</span>
+            Scanning My <span className="text-premium-red">Technical Skills</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Select a category to sweep the radar — every signal it picks up is a tool I actually
@@ -102,14 +102,14 @@ export default function Skills() {
                     className={cn(
                       'group relative flex items-center gap-4 px-5 py-4 rounded-2xl border text-left transition-all duration-300 overflow-hidden',
                       isActive
-                        ? 'border-yellow-500/40 bg-yellow-500/[0.06]'
+                        ? 'border-premium-red/40 bg-premium-red/[0.06]'
                         : 'border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]'
                     )}
                   >
                     <span
                       className={cn(
                         'absolute left-0 top-0 bottom-0 w-[3px] transition-colors duration-300',
-                        isActive ? 'bg-yellow-500' : 'bg-transparent'
+                        isActive ? 'bg-premium-red' : 'bg-transparent'
                       )}
                     />
 
@@ -120,7 +120,7 @@ export default function Skills() {
                     <span
                       className={cn(
                         'p-2.5 rounded-xl transition-colors duration-300',
-                        isActive ? 'bg-yellow-500/15 text-yellow-500' : 'bg-white/5 text-gray-500'
+                        isActive ? 'bg-premium-red/15 text-premium-red' : 'bg-white/5 text-gray-500'
                       )}
                     >
                       <CatIcon className="w-5 h-5" />
@@ -142,8 +142,8 @@ export default function Skills() {
 
                     {isActive && (
                       <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75" />
-                        <span className="relative inline-flex h-2 w-2 rounded-full bg-yellow-400" />
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-premium-red-light opacity-75" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-premium-red-light" />
                       </span>
                     )}
                   </button>
@@ -168,7 +168,7 @@ export default function Skills() {
                 style={{ inset: '16%' }}
               />
               <div
-                className="absolute rounded-full border border-yellow-500/10"
+                className="absolute rounded-full border border-premium-red/10"
                 style={{ inset: '32%' }}
               />
 
@@ -192,7 +192,7 @@ export default function Skills() {
 
               {/* Center core */}
               <div
-                className="absolute z-20 flex items-center justify-center rounded-full bg-black border border-yellow-500/40 shadow-[0_0_40px_rgba(234,179,8,0.15)]"
+                className="absolute z-20 flex items-center justify-center rounded-full bg-black border border-premium-red/40 shadow-[0_0_40px_rgba(234,179,8,0.15)]"
                 style={{
                   left: '50%',
                   top: '50%',
@@ -209,7 +209,7 @@ export default function Skills() {
                     exit={{ opacity: 0, scale: 0.6 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ActiveIcon className="w-6 h-6 md:w-7 md:h-7 text-yellow-500" />
+                    <ActiveIcon className="w-6 h-6 md:w-7 md:h-7 text-premium-red" />
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -230,10 +230,10 @@ export default function Skills() {
                         className="absolute z-10"
                         style={{ ...pos, transform: 'translate(-50%, -50%)' }}
                       >
-                        <div className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black border border-yellow-500/30 shadow-lg whitespace-nowrap">
+                        <div className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black border border-premium-red/30 shadow-lg whitespace-nowrap">
                           <span className="relative flex h-1.5 w-1.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-60" />
-                            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-yellow-400" />
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-premium-red-light opacity-60" />
+                            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-premium-red-light" />
                           </span>
                           <span className="text-[11px] md:text-xs font-mono text-gray-200">
                             {skill}
@@ -249,7 +249,7 @@ export default function Skills() {
             {/* Readout */}
             <div className="mt-6 text-center font-mono text-[11px] text-gray-600 uppercase tracking-widest">
               tracking {active.skills.length} signal{active.skills.length > 1 ? 's' : ''} ·{' '}
-              <span className="text-yellow-500">{active.title}</span>
+              <span className="text-premium-red">{active.title}</span>
             </div>
           </div>
 

@@ -32,14 +32,14 @@ export default function ChatUI() {
 
     return (
         <div className="w-full max-w-md mx-auto">
-            <div className="glass-card rounded-2xl overflow-hidden border border-neon-yellow/10 shadow-2xl">
+            <div className="glass-card rounded-2xl overflow-hidden border border-premium-red/10 shadow-2xl">
                 {/* Chat Header */}
-                <div className="px-4 py-3 border-b border-neon-yellow/10 bg-white/5 flex items-center justify-between">
+                <div className="px-4 py-3 border-b border-premium-red/10 bg-white/5 flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 rounded-full bg-neon-yellow animate-pulse" />
+                        <div className="w-2 h-2 rounded-full bg-premium-red animate-pulse" />
                         <span className="text-xs font-semibold text-gray-300 uppercase tracking-wider">AI Assistant Agent</span>
                     </div>
-                    <Bot className="w-4 h-4 text-neon-yellow" />
+                    <Bot className="w-4 h-4 text-premium-red" />
                 </div>
 
                 {/* Chat Body */}
@@ -52,8 +52,8 @@ export default function ChatUI() {
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 className="flex items-start space-x-3"
                             >
-                                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-neon-yellow/20 flex items-center justify-center border border-neon-yellow/30">
-                                    <User className="w-4 h-4 text-neon-yellow" />
+                                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-premium-red/20 flex items-center justify-center border border-premium-red/30">
+                                    <User className="w-4 h-4 text-premium-red" />
                                 </div>
                                 <div className="px-4 py-2 rounded-2xl rounded-tl-none bg-white/5 border border-white/10 text-sm text-gray-200 shadow-sm">
                                     {messages[0].content}
@@ -68,11 +68,11 @@ export default function ChatUI() {
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 className="flex items-start space-x-3 justify-end"
                             >
-                                <div className="px-4 py-2 rounded-2xl rounded-tr-none bg-neon-yellow/10 border border-neon-yellow/20 text-sm text-gray-200 shadow-[0_0_15px_rgba(250,204,21,0.1)]">
+                                <div className="px-4 py-2 rounded-2xl rounded-tr-none bg-premium-red/10 border border-premium-red/20 text-sm text-gray-200 shadow-[0_0_15px_rgba(220,38,38,0.08)]">
                                     {messages[1].content}
                                 </div>
-                                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-neon-yellow/20 flex items-center justify-center border border-neon-yellow/30">
-                                    <Bot className="w-4 h-4 text-neon-yellow" />
+                                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-premium-red/20 flex items-center justify-center border border-premium-red/30">
+                                    <Bot className="w-4 h-4 text-premium-red" />
                                 </div>
                             </motion.div>
                         )}
@@ -80,7 +80,7 @@ export default function ChatUI() {
                 </div>
 
                 {/* Chat Input Placeholder */}
-                <div className="px-4 py-3 border-t border-neon-yellow/10 bg-white/5 flex items-center space-x-3">
+                <div className="px-4 py-3 border-t border-premium-red/10 bg-white/5 flex items-center space-x-3">
                     <div className="flex-1 bg-white/5 border border-white/10 rounded-full h-8 px-4 flex items-center">
                         <span className="text-xs text-gray-500">Ask something...</span>
                     </div>
