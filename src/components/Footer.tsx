@@ -19,9 +19,16 @@ export default function Footer() {
                 </div>
 
                 <div className="flex items-center space-x-8 text-xs font-bold text-gray-500 uppercase tracking-widest">
-                    <a href="#" className="hover:text-premium-red transition-colors">Twitter</a>
-                    <a href="#" className="hover:text-premium-red transition-colors">LinkedIn</a>
-                    <a href="#" className="hover:text-premium-red transition-colors">GitHub</a>
+                    <a
+                        href="https://www.instagram.com/_.harish_27/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-premium-red transition-colors"
+                    >
+                        Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/in/harish-c-p-578287247/" className="hover:text-premium-red transition-colors">LinkedIn</a>
+                    <a href="https://github.com/Harishnlmt" className="hover:text-premium-red transition-colors">GitHub</a>
                 </div>
 
                 <div className="text-[10px] text-gray-600 uppercase tracking-widest font-bold">
