@@ -25,6 +25,7 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [hideButtons, setHideButtons] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -59,6 +60,28 @@ export default function Hero() {
 
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, roleIndex]);
+
+
+  useEffect(() => {
+    const footer = document.getElementById("footer");
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHideButtons(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    if (footer) {
+      observer.observe(footer);
+    }
+
+    return () => {
+      if (footer) observer.disconnect();
+    };
+  }, []);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
@@ -282,7 +305,12 @@ export default function Hero() {
       </div>
 
       {/* Mobile Floating Buttons */}
-      <div className="fixed bottom-6 right-4 z-50 flex flex-col gap-3 md:hidden">
+      <div
+        className={`fixed bottom-6 right-4 z-50 flex flex-col gap-3 md:hidden transition-all duration-300 ${hideButtons
+            ? "opacity-0 pointer-events-none translate-y-10"
+            : "opacity-100 translate-y-0"
+          }`}
+      >
         {/* Projects */}
         <button
           onClick={() => scrollToSection("projects")}
