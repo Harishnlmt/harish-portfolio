@@ -16,8 +16,8 @@ export default function Footer() {
                     <Image
                         src="/logo.png"
                         alt="Harish Logo"
-                        width={48}
-                        height={48}
+                        width={58}
+                        height={58}
                         className="object-contain"
                     />
                 </a>

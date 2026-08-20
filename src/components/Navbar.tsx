@@ -55,8 +55,8 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="Logo"
-              width={36}
-              height={36}
+              width={46}
+              height={46}
               priority
               className="h-8 w-8 sm:h-9 sm:w-9 object-contain"
             />
