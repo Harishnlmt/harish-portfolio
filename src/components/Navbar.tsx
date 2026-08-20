@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Cpu } from 'lucide-react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -49,10 +50,21 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex justify-between items-center">
 
+          {/* Logo */}
+          <a href="#" className="flex items-center shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={36}
+              height={36}
+              priority
+              className="h-8 w-8 sm:h-9 sm:w-9 object-contain"
+            />
+          </a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8 ml-auto">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
